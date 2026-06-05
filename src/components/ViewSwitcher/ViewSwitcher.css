@@ -1,0 +1,37 @@
+.view-switcher {
+  width: fit-content;
+  display: flex;
+  flex-shrink: 0;
+  background: #e2e8f0;
+  padding: 2px;
+  margin-left: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.view-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.switcher-svg {
+  fill: #718096;
+  transition: fill 0.2s;
+}
+
+.view-btn.active {
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.view-btn.active .switcher-svg {
+  fill: #3182ce;
+}
