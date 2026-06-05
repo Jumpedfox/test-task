@@ -25,7 +25,7 @@ export const CardItem = ({ card }) => (
         <time className="meta-title">{card.dateRight}</time>
         <div className="meta-stats-row">
           <span className="stat-item">
-            <HeartIcon color="#1a202c" />
+            <HeartIcon color="#ef4444" />
             {card.likesRight}
           </span>
           <span className="stat-item">
@@ -35,7 +35,7 @@ export const CardItem = ({ card }) => (
         </div>
       </div>
       <div className="card-col col-type">
-        <span className="meta-type">{card.typeLeft}</span>
+        <span className="meta-title no-margin">{card.typeLeft}</span>
         <time className="meta-date-muted">{card.dateBottomRight}</time>
       </div>
     </div>
