@@ -1,5 +1,8 @@
 import { getRelativeDateStr, getRandomDateInRange } from "./dateUtils";
 
+const randomMax999 = (min = 0) =>
+  Math.floor(Math.random() * (999 - min + 1)) + min;
+
 export const INITIAL_CARDS = [
   {
     id: 1,
@@ -103,14 +106,20 @@ export const generateNewCards = (currentLength) =>
   Array.from({ length: 8 }, (_, i) => {
     const nextId = currentLength + i + 1;
     const lockId = ((nextId - 1) % 80) + 1;
-    const likesLeft = Math.floor(Math.random() * 800) + 50;
-    const likesRight = likesLeft + Math.floor(Math.random() * 4000) + 300;
-    const commentsLeft = Math.floor(Math.random() * 90) + 5;
-    const commentsRight = commentsLeft + Math.floor(Math.random() * 400) + 40;
+
+    const likesLeft = randomMax999(50);
+
+    const likesRight = randomMax999(likesLeft);
+
+    const commentsLeft = randomMax999(5);
+
+    const commentsRight = randomMax999(commentsLeft);
+
     const randomPastDate = getRandomDateInRange(
       new Date("2025-06-01"),
       new Date("2026-05-01"),
     );
+
     return {
       id: nextId,
       image: `https://loremflickr.com/400/400/nature?lock=${lockId}`,
