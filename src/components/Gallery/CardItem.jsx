@@ -35,7 +35,7 @@ export const CardItem = ({ card }) => (
         </div>
       </div>
       <div className="card-col col-type">
-        <span className="meta-title no-margin">{card.typeLeft}</span>
+        <span className="meta-title">{card.typeLeft}</span>
         <time className="meta-date-muted">{card.dateBottomRight}</time>
       </div>
     </div>
